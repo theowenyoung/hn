@@ -1,5 +1,7 @@
 # embeddable-hn
 
+Fork from <https://github.com/TXTPEN/hn> for original project not maintained.
+
 Embed Hacker News comment tree automatically on your website. Built with [Preact](https://preactjs.com).
 
 ## Sites using this plugin
@@ -31,14 +33,14 @@ This tool queries from `hn.algolia.com/api` so the response time is around ~10ms
     a. Put these lines at the top of page before `</head>`
 
     ```
-    <link rel="preload" href="https://txtpen.codes/txtpen-hn-embed.min.js" as="script">
-    <link href="https://txtpen.codes/txtpen-hn-embed.min.css" rel="stylesheet">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@0.1/build/bundle.js" as="script">
+    <link href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@0.1/build/style.css" rel="stylesheet">
     ```
 
     b. Put this after `</body>` tag
 
     ```
-    <script src="https://txtpen.codes/txtpen-hn-embed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/theowenyoung/hn@0.1/build/bundle.js"></script>
     ```
 
 2. Add HTML tag to embed comment tree.
@@ -59,7 +61,7 @@ This tool queries from `hn.algolia.com/api` so the response time is around ~10ms
 ## Development
 
 ```
-git clone https://github.com/txtpen/hn.git
+git clone https://github.com/theowenyoung/hn.git
 cd hn
 npm install
 npm run dev
