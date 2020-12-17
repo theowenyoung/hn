@@ -6,7 +6,7 @@ Embed Hacker News comment tree automatically on your website. Built with [Preact
 
 ## Sites using this plugin
 
-* [rickyhan.com](http://rickyhan.com/blog/k8s.html)
+- [rickyhan.com](http://rickyhan.com/blog/k8s.html)
 
 If you want your site featured here, submit a pull request.
 
@@ -30,33 +30,26 @@ This tool queries from `hn.algolia.com/api` so the response time is around ~10ms
 
 1. Embed the javascript file.
 
-    a. Put these lines at the top of page before `</head>`
+   a. Put these lines at the top of page before `</head>`
 
-    ```
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js" as="script">
-    <link href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/style.css" rel="stylesheet">
-    ```
+   ```
+   <link rel="preload" href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js" as="script">
+   ```
 
-    b. Put this after `</body>` tag
+   b. Put this after `</body>` tag
 
-    ```
-    <script src="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js"></script>
-    ```
+   ```
+   <script src="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js"></script>
+   ```
 
 2. Add HTML tag to embed comment tree.
 
 ```
-<txtpen-hn-comment> </txtpen-hn-comment>
+<div class="hn-card" data-id="25426185">
+</div>
 ```
 
 3. That's it.
-
-4. Optional: if you want to specify the Story ID, add a meta tag similar to the one below. Otherwise it will query the url and link the corresponding HN comments automatically.
-
-```
-<meta property="hacker-news" content="{PUT_YOUR_STORY_ID_HERE}">
-```
-
 
 ## Development
 

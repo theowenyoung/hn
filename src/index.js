@@ -1,30 +1,28 @@
 // import 'promise-polyfill';
 // import 'isomorphic-fetch';
-import { h, render } from 'preact';
-import './style';
-
-let root;
+import { h, render } from "preact";
 function init() {
-	let App = require('./components/app').default;
-
-	const element = document.querySelector('meta[property="hacker-news"]');
-	let hnID;
-	if (element) {
-		hnID = element.getAttribute("content");
+	let App = require("./components/app").default;
+	const elements = document.querySelectorAll(".hn-card");
+	if (elements && elements.length > 0) {
+		for (let i = 0; i < elements.length; i++) {
+			const element = elements[i];
+			if (element && element.dataset.id) {
+				const hnID = element.dataset.id;
+				render(<App id={hnID} />, element);
+			} else {
+				console.warn("Can not detect data-id");
+			}
+		}
+	} else {
+		console.warn("Can not detect the hn-card element");
+		return;
 	}
-
-	root = render(<App id={hnID}/>, document.querySelector('txtpen-hn-comment'), root);
 }
-
-// register ServiceWorker via OfflinePlugin, for prod only:
-// if (process.env.NODE_ENV==='production') {
-// 	require('./pwa');
-// }
-
 // in development, set up HMR:
 if (module.hot) {
 	//require('preact/devtools');   // turn this on if you want to enable React DevTools!
-	module.hot.accept('./components/app', () => requestAnimationFrame(init) );
+	module.hot.accept("./components/app", () => requestAnimationFrame(init));
 }
 
 init();
