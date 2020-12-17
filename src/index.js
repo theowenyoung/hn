@@ -9,7 +9,7 @@ function init() {
 			const element = elements[i];
 			if (element && element.dataset.id) {
 				const hnID = element.dataset.id;
-				render(<App id={hnID} />, element);
+				render(<App id={hnID} />, element, element.firstChild);
 			} else {
 				console.warn("Can not detect data-id");
 			}
@@ -27,5 +27,4 @@ if (module.hot) {
 window.hnEmbed = {
 	load: init,
 };
-
 init();
