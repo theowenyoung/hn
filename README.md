@@ -33,13 +33,13 @@ This tool queries from `hn.algolia.com/api` so the response time is around ~10ms
    a. Put these lines at the top of page before `</head>`
 
    ```
-   <link rel="preload" href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js" as="script">
+   <link rel="preload" href="https://cdn.jsdelivr.net/gh/theowenyoung/hn@2/build/bundle.js" as="script">
    ```
 
    b. Put this after `</body>` tag
 
    ```
-   <script src="https://cdn.jsdelivr.net/gh/theowenyoung/hn@1/build/bundle.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/theowenyoung/hn@2/build/bundle.js"></script>
    ```
 
 2. Add HTML tag to embed comment tree.
